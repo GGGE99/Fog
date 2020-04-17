@@ -2,25 +2,61 @@
 
 -- noinspection SqlNoDataSourceInspectionForFile
 
-CREATE DATABASE  IF NOT EXISTS `useradmin`;
+CREATE DATABASE  IF NOT EXISTS `inventory`;
 
 
-USE `useradmin`;
+USE `inventory`;
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users` (
+DROP TABLE IF EXISTS `height`;
+CREATE TABLE `height` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(90) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `role` varchar(20) NOT NULL DEFAULT 'customer',
+  `height`int(11) NOT NULL
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
-LOCK TABLES `users` WRITE;
-INSERT INTO `users` VALUES 
-(1,'jens@somewhere.com','jensen','customer'),
-(2,'ken@somewhere.com','kensen','customer'),
-(3,'robin@somewhere.com','batman','employee');
-UNLOCK TABLES;
+DROP TABLE IF EXISTS `length`;
+CREATE TABLE `length` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `length`int(11) NOT NULL
+  PRIMARY KEY (`id`),
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
+DROP TABLE IF EXISTS `width`;
+CREATE TABLE `width` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `width`int(11) NOT NULL
+  PRIMARY KEY (`id`),
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+INSERT INTO `height`(height)VALUES(180);
+INSERT INTO `height`(height)VALUES(190);
+INSERT INTO `height`(height)VALUES(200);
+INSERT INTO `height`(height)VALUES(210);
+INSERT INTO `height`(height)VALUES(220);
+INSERT INTO `height`(height)VALUES(230);
+INSERT INTO `height`(height)VALUES(240);
+
+INSERT INTO `length`(length)VALUES(240);
+INSERT INTO `length`(length)VALUES(290);
+INSERT INTO `length`(length)VALUES(340);
+INSERT INTO `length`(length)VALUES(390);
+INSERT INTO `length`(length)VALUES(340);
+INSERT INTO `length`(length)VALUES(390);
+INSERT INTO `length`(length)VALUES(440);
+INSERT INTO `length`(length)VALUES(490);
+INSERT INTO `length`(length)VALUES(540);
+INSERT INTO `length`(length)VALUES(590);
+INSERT INTO `length`(length)VALUES(640);
+INSERT INTO `length`(length)VALUES(690);
+INSERT INTO `length`(length)VALUES(740);
+
+INSERT INTO `width`(width)VALUES(240);
+INSERT INTO `width`(width)VALUES(280);
+INSERT INTO `width`(width)VALUES(320);
+INSERT INTO `width`(width)VALUES(360);
+INSERT INTO `width`(width)VALUES(400);
+INSERT INTO `width`(width)VALUES(440);
+INSERT INTO `width`(width)VALUES(480);
+INSERT INTO `width`(width)VALUES(520);
+INSERT INTO `width`(width)VALUES(560);
+INSERT INTO `width`(width)VALUES(600);
