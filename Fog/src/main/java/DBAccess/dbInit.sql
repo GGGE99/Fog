@@ -1,31 +1,32 @@
 -- noinspection SqlDialectInspectionForFile
 
 -- noinspection SqlNoDataSourceInspectionForFile
-
+DROP database if exists inventory;
 CREATE DATABASE  IF NOT EXISTS `inventory`;
 
+SET GLOBAL time_zone = '+00:00';
 
 USE `inventory`;
 
 DROP TABLE IF EXISTS `height`;
 CREATE TABLE `height` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `height`int(11) NOT NULL
-  PRIMARY KEY (`id`),
+  `height`int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `length`;
 CREATE TABLE `length` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `length`int(11) NOT NULL
-  PRIMARY KEY (`id`),
+  `length`int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS `width`;
 CREATE TABLE `width` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `width`int(11) NOT NULL
-  PRIMARY KEY (`id`),
+  `width`int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 INSERT INTO `height`(height)VALUES(180);
