@@ -15,12 +15,12 @@ public class DimensionsFacade {
     public static ArrayList<Integer> getWidth(){
         ArrayList<Integer> list = new ArrayList<>();
 
-        return list;
+        return Datamapper.GetWidth();
     }
 
-    public static ArrayList<Integer> getLenght(){
+    public static ArrayList<Integer> getLength(){
         ArrayList<Integer> list = new ArrayList<>();
 
-        return list;
+        return Datamapper.GetLength();
     }
 }

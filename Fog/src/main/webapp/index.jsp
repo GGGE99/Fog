@@ -21,12 +21,12 @@
     <div class="form-group col-lg-5"></div>
     <div class="form-group col-lg-2">
         <select required class="form-control number-input" id="sel2" name="bottom">
-            <option value="" disabled selected>bredde</option>
-            <%--        <c:forEach var="i" items="${DataMapper.retrieveBottoms()}" varStatus="Count">--%>
-            <%--            <option value="${Count.index+1}">--%>
-            <%--                    ${i.getName()}--%>
-            <%--            </option>--%>
-            <%--        </c:forEach>--%>
+            <option value="" disabled selected>Bredde</option>
+                    <c:forEach var="k" items="${DimensionsFacade.getWidth()}" varStatus="Count">
+                        <option value="${Count.index+1}">
+                                ${k}
+                        </option>
+                    </c:forEach>
         </select>
     </div>
     <div class="form-group col-lg-5"></div>
@@ -34,12 +34,12 @@
     <div class="form-group col-lg-5"></div>
     <div class="form-group col-lg-2">
         <select required class="form-control number-input" id="sel3" name="bottom">
-            <option value="" disabled selected>længde</option>
-            <%--        <c:forEach var="i" items="${DataMapper.retrieveBottoms()}" varStatus="Count">--%>
-            <%--            <option value="${Count.index+1}">--%>
-            <%--                    ${i.getName()}--%>
-            <%--            </option>--%>
-            <%--        </c:forEach>--%>
+            <option value="" disabled selected>Længde</option>
+                    <c:forEach var="i" items="${DimensionsFacade.getLength()}" varStatus="Count">
+                        <option value="${Count.index+1}">
+                                ${i}
+                        </option>
+                    </c:forEach>
         </select>
     </div>
     <div class="form-group col-lg-5"></div>
