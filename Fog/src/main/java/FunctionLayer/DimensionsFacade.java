@@ -23,4 +23,15 @@ public class DimensionsFacade {
 
         return Datamapper.GetLength();
     }
+
+    public static ArrayList<Integer> getSlope() {
+        ArrayList<Integer> list = new ArrayList<>();
+
+        return Datamapper.GetSlope();
+    }
+    public static  ArrayList<String> getAllRoofs(){
+        ArrayList<String> list = new ArrayList<>();
+
+        return Datamapper.GetAllRoof();
+    }
 }

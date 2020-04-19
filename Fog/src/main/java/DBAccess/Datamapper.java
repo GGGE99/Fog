@@ -62,5 +62,44 @@ public class Datamapper {
             return null;
         }
     }
-
+    public static ArrayList<Integer> GetSlope() {
+        ArrayList<Integer> allSlope = new ArrayList<Integer>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT slope FROM `slope`;";
+            PreparedStatement preparedStatement = con.prepareStatement(SQL);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int slope = rs.getInt("slope");
+                allSlope.add(slope);
+            }
+            return allSlope;
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    public static ArrayList<String> GetAllRoof() {
+        ArrayList<String> allRoofTypes = new ArrayList<String>();
+        String roof;
+        try {
+            Connection con = Connector.connection();
+            String SQL = "Select roof_type.name, roof_color.color" +
+                    "from ((roof" +
+                    "inner join roof_type on roof.type_id = roof_type.id)" +
+                    "inner join roof_color on roof.color_id = roof_color.id);";
+            PreparedStatement preparedStatement = con.prepareStatement(SQL);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                String type = rs.getString("roof_type");
+                String color = rs.getString("roof_color");
+                roof = type + color;
+                allRoofTypes.add(type);
+            }
+            return allRoofTypes;
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

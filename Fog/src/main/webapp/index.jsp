@@ -22,9 +22,9 @@
     <div class="form-group col-lg-2">
         <select required class="form-control number-input" id="sel2" name="bottom">
             <option value="" disabled selected>Bredde</option>
-                    <c:forEach var="k" items="${DimensionsFacade.getWidth()}" varStatus="Count">
+                    <c:forEach var="i" items="${DimensionsFacade.getWidth()}" varStatus="Count">
                         <option value="${Count.index+1}">
-                                ${k}
+                                ${i}
                         </option>
                     </c:forEach>
         </select>
@@ -57,14 +57,26 @@
 <div class="form-group col-lg-5"></div>
 <div class="form-group col-lg-2">
     <select required class="form-control number-input" id="sel4" name="bottom">
-        <option value="" disabled selected>Hældning</option>
-        <c:forEach var="i" items="${DimensionsFacade.getLength()}" varStatus="Count">
+        <option value="" disabled selected>Hældning af tag</option>
+        <c:forEach var="i" items="${DimensionsFacade.getSlope()}" varStatus="Count">
             <option value="${Count.index+1}">
                     ${i}
             </option>
         </c:forEach>
     </select>
 </div>
+
+    <div class="form-group col-lg-5"></div>
+    <div class="form-group col-lg-2">
+        <select required class="form-control number-input" id="sel4" name="bottom">
+            <option value="" disabled selected>Vælg tagtupe</option>
+            <c:forEach var="i" items="${DimensionFacade.getAllRoofs()}" varStatus="Count">
+                <option value="${Count.index+1}">
+                        ${i}
+                </option>
+            </c:forEach>
+        </select>
+    </div>
     <div class="form-group col-lg-5"></div>
     <div class="form-group col-lg-5"></div>
     <div class="form-group col-lg-2">
